@@ -1,3 +1,5 @@
+:: Download NodeRT from https://github.com/NodeRT/NodeRT
+
 NodeRTCmd.exe ^
   --winmd "C:\Program Files (x86)\Windows Kits\10\UnionMetadata\Windows.winmd" ^
   --outdir prebuilt ^
