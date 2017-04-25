@@ -1,0 +1,38 @@
+{
+  "name": "win10-find-all-video-capture-devices",
+  "version": "0.1.0",
+  "description": "Find all video capture devices on Windows 10.",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard *.js lib/**.js --fix"
+  },
+  "keywords": [
+    "win",
+    "win32",
+    "windows",
+    "uwp",
+    "universal",
+    "platform",
+    "nodert",
+    "find",
+    "video",
+    "capture",
+    "device",
+    "devices",
+    "webcam"
+  ],
+  "author": "Mark Tiedemann <www.marktiedemann@gmail.com>",
+  "license": "WTFPL",
+  "devDependencies": {
+    "standard": "^10.0.2"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarkTiedemann/win10-find-all-video-capture-devices.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MarkTiedemann/win10-find-all-video-capture-devices/issues"
+  },
+  "homepage": "https://github.com/MarkTiedemann/win10-find-all-video-capture-devices"
+}
