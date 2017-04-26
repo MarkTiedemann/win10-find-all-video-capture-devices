@@ -15,43 +15,46 @@ npm install win10-find-all-video-capture-devices
 ## Quickstart
 
 ```js
+const isWin10 = require('is-win10')
 const findAllVideoCaptureDevices = require('win10-find-all-video-capture-devices')
 
-findAllVideoCaptureDevices().then(devices => {
-  devices.forEach(device => {
-    console.log(device)
-    /* {
-     *   enclosureLocation: {
-     *     inDock: false,
-     *     inLid: true,
-     *     panel: 'front',
-     *     rotationAngleInDegreesClockwise: 0
-     *   },
-     *   id: '{{id}}',
-     *   isDefault: false,
-     *   isEnabled: true,
-     *   kind: 'deviceInterface',
-     *   name: '{{name}}',
-     *   pairing: {
-     *     canPair: false,
-     *     isPaired: false,
-     *     protectionLevel: 'none'
-     *   }
-     * }
-     */
+if (isWin10) {
+  findAllVideoCaptureDevices().then(devices => {
+    devices.forEach(device => {
+      console.log(device)
+      /* {
+      *   enclosureLocation: {
+      *     inDock: false,
+      *     inLid: true,
+      *     panel: 'front',
+      *     rotationAngleInDegreesClockwise: 0
+      *   },
+      *   id: '{{id}}',
+      *   isDefault: false,
+      *   isEnabled: true,
+      *   kind: 'deviceInterface',
+      *   name: '{{name}}',
+      *   pairing: {
+      *     canPair: false,
+      *     isPaired: false,
+      *     protectionLevel: 'none'
+      *   }
+      * }
+      */
+    })
   })
-})
+}
 ```
 
 ## API
 
 ### `findAllVideoCaptureDevices()`
 
-- throws `<Error>` `E_WINDOWS_ONLY` if used on a non-Windows system
-- throws `<Error>` `E_WINDOWS_10_ONLY` if used on a Windows system that is not version 10
 - returns a `<Promise>` which:
   - resolves with an `<Array>` of video capture devices
-  - rejects with an `<Error>` if finding the devices failed
+  - rejects with an `<Error>`
+      - if used on a non-Windows 10 system
+      - if finding the devices failed
 
 For more documentation, check out the code comments, or consult the [official UWP Windows.Devices.Enumeration documentation](https://docs.microsoft.com/en-us/uwp/api/windows.devices.enumeration).
 

@@ -1,6 +1,6 @@
 {
   "name": "win10-find-all-video-capture-devices",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Find all video capture devices on Windows 10.",
   "main": "index.js",
   "scripts": {
@@ -26,7 +26,9 @@
   "devDependencies": {
     "standard": "^10.0.2"
   },
-  "dependencies": {},
+  "dependencies": {
+    "is-win10": "^1.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MarkTiedemann/win10-find-all-video-capture-devices.git"

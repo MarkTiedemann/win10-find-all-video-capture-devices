@@ -1,4 +1,4 @@
-const os = require('os')
+const isWin10 = require('is-win10')
 const api = require('./prebuilt/windows.devices.enumeration')
 const invertObject = require('./lib/invert-object')
 const iterableToArray = require('./lib/iterable-to-array')
@@ -48,12 +48,8 @@ const sanitizeDeviceInfoCollection = deviceInfoCollection => {
 }
 
 module.exports = () => {
-  if (!os.platform().startsWith('win')) {
-    throw new Error('E_WINDOWS_ONLY')
-  }
-
-  if (!os.release().startsWith('10')) {
-    throw new Error('E_WINDOWS_10_ONLY')
+  if (!isWin10) {
+    return Promise.reject(new Error('Windows 10 only'))
   }
 
   return findDeviceInfoCollection()
